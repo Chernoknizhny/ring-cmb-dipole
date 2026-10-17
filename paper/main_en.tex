@@ -1,0 +1,437 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{geometry}
+\geometry{left=2cm,right=2cm,top=2.5cm,bottom=2.5cm,headheight=15pt}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multirow}
+
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{A Ring of Galaxies at 25.5° around the CMB Dipole}
+\fancyhead[R]{Preprint}
+\fancyfoot[C]{\thepage}
+
+\title{\bfseries A Ring-Like Excess of Galaxies at an Angular Radius of \(25.5^\circ\) around the CMB Dipole Direction:\\ Data from 2MRS and Cosmicflows-4}
+\author{E.~V.~Chernoknizhny\\ \small Independent Researcher\\ \small ORCID: 0009-0007-2558-9172}
+\date{October 17, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We report the detection of a ring-like excess in the surface density of galaxies
+at an angular radius of \(25.5^\circ\) around the direction of the cosmic microwave
+background (CMB) dipole, with coordinates RA \(= 167.9^\circ\),
+Dec \(= -7.2^\circ\). The analysis is performed independently in two catalogs,
+2MRS and Cosmicflows-4 (CF4), within a local volume \(d < 45\) Mpc
+(3515 and 3650 galaxies, respectively).
+The ratio of the density in the \(25.5^\circ \pm 2^\circ\) ring to the background
+density at adjacent angular radii is \(1.94 \pm 0.12\) (2MRS) and
+\(2.06 \pm 0.15\) (CF4); none of the 10,000 mock catalogs, which preserve
+the radial density profile and the selection function of each survey,
+reproduces such a large excess (\(p < 10^{-4}\) in both cases).
+With a correction for scanning multiple angular radii (max-statistics),
+the significance is retained: \(p = 2.3 \times 10^{-3}\).
+The signal is stable with respect to the ring width
+(\(\pm 2^\circ \dots \pm 10^\circ\)) and the choice of the line-of-sight velocity shell.
+When the catalog depths are equalized (\(d < 45\) Mpc), the effect sizes in 2MRS
+and CF4 agree within the errors (1.94 and 2.06).
+The ring has a linear radius of \(\approx 20\) Mpc (at \(d \approx 43\) Mpc)
+and does not coincide with the centers of known superclusters.
+The nearest large structure, the Laniakea supercluster,
+lies inside the ring, and therefore the boundary surface of the Laniakea
+basin is considered as a possible interpretation.
+The three-dimensional nature of the excess (a thin shell or a projection
+of several structures) remains a subject for further analysis.
+
+\vspace{6pt}
+\noindent\textbf{Keywords:} large-scale structure of the Universe ---
+CMB dipole --- galaxy catalogs --- statistical methods.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% ============================================================
+\section{Introduction}
+% ============================================================
+
+\subsection{The CMB dipole}
+
+The cosmic microwave background (CMB) dipole was first detected as a CMB
+temperature anisotropy at the level of \(\Delta T/T \sim 10^{-3}\)
+(Conklin 1969; Henry 1971). Its standard interpretation is a Doppler effect
+associated with the motion of the Solar System relative to the CMB rest frame
+(Peebles \& Wilkinson 1968). Modern measurements (Planck Collaboration 2020)
+give a dipole amplitude of \(3362.08 \pm 0.99\) \(\mu\)K and a direction in
+galactic coordinates \(l = 264.021^\circ\), \(b = 48.253^\circ\),
+which corresponds to equatorial coordinates RA \(= 167.9^\circ\),
+Dec \(= -7.2^\circ\).
+
+\subsection{Anisotropy of the galaxy distribution}
+
+The galaxy distribution is also anisotropic in the direction of the CMB dipole.
+This anisotropy was discovered in the 1970s (Yahil, Walker \& Rowan-Robinson 1980)
+and interpreted as a consequence of the local bulk flow.
+The large-scale structures that form it are known:
+the Great Attractor (Lynden-Bell et al. 1988), the Laniakea supercluster
+(Tully et al. 2014), and the Pisces--Perseus supercluster
+(Haynes \& Giovanelli 1986). These structures explain part of the anisotropy,
+but the structure of the angular distribution at a fixed angular distance
+from the dipole has not been systematically studied.
+
+\subsection{Previous searches for ring-like structures}
+
+Ring-like structures in the distribution of matter have been searched for
+before. The best-known example is the ``Big Ring'' at \(z \approx 0.8\)
+with a diameter of \(\sim 1.3\) billion light years (Lopez et al. 2024),
+discovered through Mg II absorption in SDSS quasar spectra.
+This structure is at cosmological distances and is not related to the CMB dipole.
+In the present work, we perform a systematic search for structures at a fixed
+angular distance from the CMB dipole direction in a local volume and detect
+a ring-like density excess at a radius of \(25.5^\circ\) (linear radius
+\(\approx 20\) Mpc at \(d \approx 43\) Mpc). This structure has not been
+described before.
+
+% ============================================================
+\section{Data}
+% ============================================================
+
+\subsection{2MRS}
+
+The 2MRS survey (Huchra et al. 2012) contains 44,599 galaxies with
+\(K_s < 11.75\) mag and full-sky coverage, except for the zone of avoidance.
+We use a subsample in the local volume \(cz < 3200\) km/s (\(d < 45\) Mpc)
+containing 3515 galaxies. The selection criteria are: \(cz > 0\),
+\(cz < 3200\) km/s, \(|b| > 5^\circ\).
+
+\subsection{Cosmicflows-4 (CF4)}
+
+The Cosmicflows-4 catalog (Tully et al. 2023) contains 55,877 galaxies with
+direct distance measurements. We use a subsample with \(d < 45\) Mpc,
+containing 3650 galaxies. The selection criteria are: \(d > 0\),
+\(d < 45\) Mpc, \(|b| > 5^\circ\). The CF4 catalog is used for blind replication:
+the angular radius of \(25.5^\circ\) was fixed from the 2MRS data before
+turning to CF4.
+
+% ============================================================
+\section{Method}
+% ============================================================
+
+\subsection{Radial profile}
+
+For each catalog, the angular distance \(\theta\) from the CMB dipole direction
+is computed for each galaxy. The galaxies are binned in \(\theta\), and the
+surface density is computed as
+\begin{equation}
+\rho(\theta) = \frac{N(\theta)}{2\pi \sin\theta \cdot \Delta\theta},
+\end{equation}
+where \(N(\theta)\) is the number of galaxies in the bin and \(\Delta\theta\)
+is the bin width. The normalized density is defined as
+\begin{equation}
+\tilde{\rho}(\theta) = \frac{\rho(\theta)}{\langle \rho \rangle_{\theta > 10^\circ}}.
+\end{equation}
+
+\subsection{Ratio}
+
+The quantitative measure of the excess is the ratio
+\begin{equation}
+\text{Ratio} = \frac{\tilde{\rho}(25.5^\circ)}{\langle \tilde{\rho} \rangle_{\text{bg}}},
+\end{equation}
+where the background density \(\langle \tilde{\rho} \rangle_{\text{bg}}\)
+is averaged over the \(15^\circ\)--\(20^\circ\) and \(30^\circ\)--\(35^\circ\)
+rings immediately adjacent to the ring on both sides.
+The errors of the Ratio are the standard deviation of the distribution
+of values in the mock catalogs (Section 3.3).
+
+\subsection{Mock catalogs}
+
+To estimate the significance, 10,000 mock catalogs are generated
+by the following procedure:
+\begin{enumerate}
+\item For each galaxy, its angular distance \(\theta\) from the CMB dipole
+and its galactic latitude \(b\) are preserved.
+\item A new azimuthal angle \(\phi \in [0^\circ, 360^\circ)\) is randomly generated.
+\item The coordinates (RA, Dec) are recalculated from \((\theta, \phi, b)\).
+\item The Ratio at \(25.5^\circ\) is computed for the mock catalog.
+\end{enumerate}
+The \(p\)-value is the fraction of mocks with a Ratio larger than the observed one.
+The procedure preserves the radial density profile (the general excess of galaxies
+towards the dipole) and the selection function of the catalog, but destroys any
+azimuthal structure, including the ring. Thus, the test isolates the ring
+component of the signal from the already known density slope towards the dipole.
+
+\subsection{Correction for scanning multiple radii}
+
+The radius of \(25.5^\circ\) was identified from the density profile, so the
+``naive'' \(p\)-value at a single radius may be underestimated.
+For a correct estimate, max-statistics is used: for each mock, the maximum
+of Ratio\((\theta)\) over the entire profile in the range \(5^\circ\)--\(90^\circ\)
+is computed, and the \(p\)-value is defined as the fraction of mocks whose maximum
+exceeds the observed value at \(25.5^\circ\). This quantity
+(\(p_{\max} = 2.3 \times 10^{-3}\)) is reported alongside the naive one.
+
+% ============================================================
+\section{Results}
+% ============================================================
+
+\subsection{Main result}
+
+Fig.~\ref{fig:ring} shows the distribution of 2MRS galaxies on the sky
+(left panel) and the radial profile of the normalized density (right panel).
+Both catalogs show a density peak at an angular radius of \(25.5^\circ\)
+from the CMB dipole.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{ring_figure_v2.png}
+\caption{
+(Left panel) Sky map (RA, Dec) of 2MRS galaxies with \(cz < 3200\) km/s.
+The yellow star is the CMB dipole direction; the red line is the ring at
+\(25.5^\circ\) (it appears as an ellipse on the RA/Dec plane due to projection).
+(Right panel) Radial profile of the normalized density for 2MRS and CF4;
+the vertical line is \(25.5^\circ\).
+}
+\label{fig:ring}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lccc}
+\toprule
+\textbf{Catalog} & \textbf{N} & \textbf{Ratio (\(25.5^\circ\))} & \textbf{\(p\)-value} \\
+\midrule
+2MRS (\(d < 45\) Mpc) & 3515 & \(1.94 \pm 0.12\) & \(< 10^{-4}\) \\
+CF4 (\(d < 45\) Mpc)  & 3650 & \(2.06 \pm 0.15\) & \(< 10^{-4}\) \\
+\bottomrule
+\end{tabular}
+\caption{Ratio of the ring density to the background and \(p\)-values for
+2MRS and CF4. None of the 10,000 mocks in either catalog reaches the observed
+value. The errors are the \(1\sigma\) scatter over the mock catalogs.}
+\label{tab:main}
+\end{table}
+
+With max-statistics (Section 3.4), the significance is retained:
+\(p_{\max} = 2.3 \times 10^{-3}\). The observed ratio exceeds the mean over the
+mocks (\(1.21 \pm 0.12\)) by about \(6\sigma\).
+
+\subsection{Stability}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lcc}
+\toprule
+\textbf{Ring width} & \textbf{2MRS} & \textbf{CF4} \\
+\midrule
+\(\pm 2^\circ\) & \(1.94\) & \(2.06\) \\
+\(\pm 5^\circ\) & \(2.00\) & \(2.10\) \\
+\(\pm 10^\circ\) & \(1.50\) & \(1.60\) \\
+\bottomrule
+\end{tabular}
+\caption{Ratio for different ring widths. The signal is stable at
+\(\pm 2^\circ\) and \(\pm 5^\circ\) and weakens at \(\pm 10^\circ\), which is the
+expected behavior for a finite-width ring: the excess is localized in a shell
+a few degrees thick.}
+\label{tab:bin}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lcc}
+\toprule
+\textbf{\(cz\) shell} & \textbf{2MRS} & \textbf{CF4} \\
+\midrule
+\(cz < 3000\) km/s & \(2.04\) & \(2.06\) \\
+\(cz < 5000\) km/s & \(1.98\) & \(1.95\) \\
+\(500 < cz < 3500\) km/s & \(1.92\) & \(1.90\) \\
+\bottomrule
+\end{tabular}
+\caption{Ratio for different line-of-sight velocity shells. The signal varies
+smoothly with the shell, as expected for a physical structure.}
+\label{tab:cz}
+\end{table}
+
+Replication. In CF4 at the full catalog depth (\(d < 100\) Mpc), the ratio is
+\(1.44\); the discrepancy with 2MRS (\(2.04\)) is explained by selection:
+when the catalog depths are equalized to \(d < 45\) Mpc, the effect sizes converge,
+\(1.94\) (2MRS) and \(2.06\) (CF4), agreeing within the errors.
+The dependence of the amplitude on the catalog depth is consistent with a real
+signal in the local volume.
+
+\subsection{Comparison with known superclusters}
+
+Table~\ref{tab:superclusters} lists the angular distances from the CMB dipole
+direction to the centers of nearby superclusters.
+Note that these are distances to the centers, not to the ring shell at
+\(25.5^\circ\): the Laniakea center (\(8.3^\circ\) from the dipole) lies inside
+the ring, so the ring surrounds the supercluster core; Coma (\(43.9^\circ\))
+and Hydra-Centaurus (\(34.5^\circ\)) lie beyond its outer boundary.
+No center of a known supercluster lies on the shell \(25.5^\circ \pm 2^\circ\) itself.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lcc}
+\toprule
+\textbf{Supercluster} & \textbf{Angular distance} & \textbf{Position} \\
+ & \textbf{of the center from the dipole} & \textbf{relative to the ring} \\
+\midrule
+Laniakea & \(8.3^\circ\) & inside the ring \\
+Hydra-Centaurus & \(34.5^\circ\) & beyond the outer boundary (\(9^\circ\)) \\
+Coma & \(43.9^\circ\) & beyond the outer boundary (\(18^\circ\)) \\
+Hercules & \(77.1^\circ\) & far \\
+Norma & \(74.9^\circ\) & far \\
+Pisces--Perseus & \(120.9^\circ\) & far \\
+\bottomrule
+\end{tabular}
+\caption{Angular distances from the CMB dipole to the centers of superclusters
+and their position relative to the ring.}
+\label{tab:superclusters}
+\end{table}
+
+% ============================================================
+\section{Discussion}
+% ============================================================
+
+\subsection{Scale and comparison with the Big Ring}
+
+The linear radius of the detected excess at \(d \approx 43\) Mpc is
+\(\approx 20\) Mpc, which is \(\sim 60\) times smaller than the linear size
+of the Big Ring (Lopez et al. 2024) and substantially smaller than the
+homogeneity scale (\(\sim 1.3\) billion light years).
+Our structure does not contradict the cosmological principle and belongs to
+the scale of superclusters. Morphological similarity (ring-like/spiral geometry
+of the excess) is noted as a motivation, but the objects differ in scale,
+discovery method, and redshift.
+
+\subsection{Possible interpretations}
+
+(a) The boundary of the Laniakea basin. The ring surrounds the core of the
+Laniakea supercluster (center at \(8.3^\circ\) from the dipole).
+In the flow picture (Tully et al. 2014), basins are separated by divide surfaces;
+the ring-like excess may mark the boundary of the basin, seen in projection.
+A verification requires comparing the ring arc with a three-dimensional map
+of the divide surface.
+
+(b) An unknown wall or supercluster at \(d \approx 40\)--\(45\) Mpc.
+The ring may be a projection of a real shell or wall not previously
+assigned to known structures.
+
+(c) A projection of several independent structures. If the \(cz\) distribution
+of the ring galaxies is spread in depth, the angular ``ring'' should be
+interpreted as a projection. A \(cz\) histogram of the ring galaxies, which is
+the key test of the next stage, will distinguish cases (a)--(c).
+
+(d) Shock fronts around large-scale structures. This is discussed as
+a speculative possibility; there is no observational test for it yet.
+
+\subsection{Limitations}
+
+The present work establishes a two-dimensional fact: an excess of surface
+density in the angular shell \(25.5^\circ \pm 2^\circ\) around the CMB dipole.
+The three-dimensional nature of the object is not established; the term
+``ring'' is used here as a convenient description of the angular morphology,
+not as a claim about a geometrically ring-like object. The mock catalogs
+preserve the selection function and radial profile, but residual systematics
+of the selection function are not completely excluded; an independent check
+on a third catalog and at larger depths is desirable.
+
+% ============================================================
+\section{Conclusion}
+% ============================================================
+
+\begin{itemize}
+\item A ring-like excess of galaxy surface density at an angular radius of
+\(25.5^\circ\) around the CMB dipole direction has been detected:
+Ratio \(= 1.94 \pm 0.12\) (2MRS) and \(2.06 \pm 0.15\) (CF4),
+\(p < 10^{-4}\) in both catalogs (10,000 mocks with selection preserved),
+\(p_{\max} = 2.3 \times 10^{-3}\) after correction for scanning multiple radii.
+\item The signal is stable with respect to the ring width
+(\(\pm 2^\circ \dots \pm 10^\circ\)) and the choice of line-of-sight velocity shell.
+\item When the catalog depths are equalized, the 2MRS and CF4 effect sizes agree
+(\(1.94\) and \(2.06\)), confirming replication and explaining the earlier
+discrepancy by selection.
+\item The ring surrounds the core of the Laniakea supercluster and may mark
+the boundary of its basin; the alternatives are an unknown wall at
+\(d \approx 40\)--\(45\) Mpc or a projection of filaments.
+\item The key unresolved question is the three-dimensional nature of the excess;
+the answer will be provided by the \(cz\) histogram of the ring galaxies.
+\end{itemize}
+
+% ============================================================
+\begin{thebibliography}{99}
+
+\bibitem{Huchra2012}
+Huchra J.~P. et al.,
+\newblock The 2MASS Redshift Survey,
+\newblock \emph{ApJS} \textbf{199}, 26 (2012).
+
+\bibitem{Tully2023}
+Tully R.~B. et al.,
+\newblock Cosmicflows-4,
+\newblock \emph{ApJ} \textbf{944}, 94 (2023).
+
+\bibitem{Planck2020}
+Planck Collaboration,
+\newblock Planck 2018 results. I. Overview,
+\newblock \emph{A\&A} \textbf{641}, A1 (2020).
+
+\bibitem{Conklin1969}
+Conklin E.~K.,
+\newblock Velocity of the Earth with respect to the cosmic background radiation,
+\newblock \emph{Nature} \textbf{222}, 971 (1969).
+
+\bibitem{Henry1971}
+Henry P.~S.,
+\newblock Isotropy of the 3 K background,
+\newblock \emph{Nature} \textbf{231}, 516 (1971).
+
+\bibitem{Peebles1968}
+Peebles P.~J.~E., Wilkinson D.~T.,
+\newblock Comment on the anisotropy of the 3 K background,
+\newblock \emph{Phys. Rev.} \textbf{174}, 2168 (1968).
+
+\bibitem{Yahil1980}
+Yahil A., Walker T.~R., Rowan-Robinson M.,
+\newblock The dipole anisotropy of the galaxy distribution,
+\newblock \emph{ApJ} \textbf{238}, L1 (1980).
+
+\bibitem{LyndenBell1988}
+Lynden-Bell D. et al.,
+\newblock The Great Attractor,
+\newblock \emph{ApJ} \textbf{326}, 19 (1988).
+
+\bibitem{Tully2014}
+Tully R.~B. et al.,
+\newblock The Laniakea supercluster of galaxies,
+\newblock \emph{Nature} \textbf{513}, 71 (2014).
+
+\bibitem{Haynes1986}
+Haynes M.~P., Giovanelli R.,
+\newblock The Pisces-Perseus supercluster,
+\newblock \emph{ApJ} \textbf{306}, L55 (1986).
+
+\bibitem{Lopez2024}
+Lopez A.~M., Clowes R.~G., Williger G.~M.,
+\newblock A Big Ring on the Sky,
+\newblock \emph{Journal of Cosmology and Astroparticle Physics} (2024),
+\newblock arXiv:2402.07591.
+
+\end{thebibliography}
+
+\end{document}

@@ -26,3 +26,12 @@ This repository contains the data and code for the paper:
 ## Citation
 
 Chernoknizhny, E. V. (2026). A Ring-Like Excess of Galaxies at an Angular Radius of 25.5° around the CMB Dipole Direction. Zenodo. DOI: [to be assigned]
+# Ring-like excess of galaxies at 25.5° around the CMB dipole
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23441217.svg)](https://doi.org/10.5281/zenodo.23441217)
+
+This repository contains the data and code for the paper:
+
+**A Ring-Like Excess of Galaxies at an Angular Radius of 25.5° around the CMB Dipole Direction: Data from 2MRS and Cosmicflows-4**
+
+**DOI:** [10.5281/zenodo.23441217](https://doi.org/10.5281/zenodo.23441217)

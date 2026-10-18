@@ -1,0 +1,269 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{adjustbox}
+\geometry{left=2cm,right=2cm,top=2.5cm,bottom=2.5cm,headheight=15pt}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Angular excess of galaxies at 25.5\(^\circ\) from the CMB dipole}
+\fancyhead[R]{Version 2 (v2)}
+\fancyfoot[C]{\thepage}
+
+\title{\bfseries Angular excess of galaxies at \(25.5^\circ\) from the CMB dipole: a superposition of the Virgo cluster periphery, the Hydra--Antlia wall, and the southern Local Supercluster extension}
+
+\author{Evgeny V. Chernoknizhny \\
+\small Independent researcher, Russia \\
+\small ORCID: 0009-0007-2558-9172 \\
+\small Email: chernocnijniy@yandex.ru}
+\date{18 October 2026 (Version 2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We report the detection of a statistically significant angular excess of galaxy surface density at an angular radius of \(25.5^\circ\) around the CMB dipole direction (RA = 167.9\(^\circ\), Dec = \(-7.2^\circ\)). The analysis is performed independently in two catalogues, 2MRS and Cosmicflows-4 (CF4), within a local volume \(d < 45\) Mpc (3515 and 3197 galaxies, respectively). The ratio of the density in the \(25.5^\circ \pm 2^\circ\) shell to the background density at adjacent angular radii is \(1.94 \pm 0.12\) (2MRS) and \(2.06 \pm 0.15\) (CF4); none of the 10,000 mock catalogues, preserving the radial density profile and selection function of each survey, reproduces such a large excess (\(p < 10^{-4}\) in both cases); with the look-elsewhere correction (max-statistics), \(p_{\max} = 2.3 \times 10^{-3}\). The signal is robust to shell width and the choice of radial cuts and is replicated in two independent catalogues. The main result of this version is the decomposition of the excess: azimuthal and depth analysis shows that the excess is not a ring in the geometric sense, but a projection of three known local volume structures: (1) arc 210--240\(^\circ\) --- the Virgo cluster periphery (100\% of arc galaxies in a 10\(^\circ\) cone around M87; median depth \(cz \approx 1230-1450\) km/s); (2) arc 30--60\(^\circ\) --- the near part of the Hydra--Antlia wall (63--74\% in the Hydra A1060 cone; median \(cz \approx 2400-2650\) km/s, up to \(\approx 4600\) km/s on the extended cut); (3) arc 180--210\(^\circ\) --- the southern extension of the Virgo supercluster (depth \(cz \approx 1240-1600\) km/s with no galaxies in the M87 cone). After masking the 10\(^\circ\) Virgo cone, the ratio drops to 1.32 (2MRS) and 1.51 (CF4), and the residual splits into two arcs, consistently reproduced in both catalogues. The work illustrates a methodological conclusion: statistical robustness, significance, and replication of a signal do not guarantee its novelty --- decomposition by azimuth and depth is necessary before any non-trivial interpretations.
+
+\vspace{6pt}
+\noindent\textbf{Keywords:} large-scale structure of Universe --- CMB dipole --- galaxy catalogues --- statistical methods.
+\end{abstract}
+
+\section{Introduction}
+\subsection{The CMB dipole}
+The cosmic microwave background (CMB) dipole was first detected as a CMB temperature anisotropy at the level of \(\Delta T/T \sim 10^{-3}\) (Conklin 1969; Henry 1971). Its standard interpretation is a Doppler effect associated with the motion of the Solar System relative to the CMB rest frame (Peebles \& Wilkinson 1968). Modern measurements (Planck Collaboration 2020) give a dipole amplitude of \(3362.08 \pm 0.99\ \mu\)K and a direction in galactic coordinates \(l = 264.021^\circ\), \(b = 48.253^\circ\), which corresponds to equatorial coordinates RA \(= 167.9^\circ\), Dec \(= -7.2^\circ\).
+
+\subsection{Anisotropy of the galaxy distribution}
+The galaxy distribution is also anisotropic in the direction of the CMB dipole. This anisotropy was discovered in the 1970s (Yahil, Walker \& Rowan-Robinson 1980) and interpreted as a consequence of the local bulk flow. The large-scale structures that form it are known: the Great Attractor (Lynden-Bell et al. 1988), the Laniakea supercluster (Tully et al. 2014), and the Pisces--Perseus supercluster (Haynes \& Giovanelli 1986). These structures explain part of the anisotropy, but the structure of the angular distribution at a fixed angular distance from the dipole has not been systematically studied.
+
+\subsection{Previous searches for ring-like structures}
+Ring-like structures in the distribution of matter have been searched for before. The best-known example is the ``Big Ring'' at \(z \approx 0.8\) with a diameter of \(\sim 1.3\) billion light years (Lopez et al. 2024), discovered through Mg II absorption in SDSS quasar spectra. This structure is at cosmological distances and is not related to the CMB dipole. In this work, we perform a systematic search for structures at a fixed angular distance from the CMB dipole direction in a local volume and detect an angular excess at a radius of \(25.5^\circ\). In version v2 (this paper), we show that this excess is a projection of three known local volume structures --- the Virgo cluster periphery, the Hydra--Antlia wall, and the southern extension of the Virgo supercluster (Section 4.4). The method of detection and decomposition, as well as the methodological conclusion about the necessity of signal decomposition before any non-trivial interpretations, are of independent value.
+
+\section{Data}
+\subsection{2MRS}
+The 2MRS survey (Huchra et al. 2012) contains 44,599 galaxies with \(K_s < 11.75\) mag and full-sky coverage, except for the zone of avoidance. We use a subsample in the local volume \(cz < 3200\) km/s (\(d < 45\) Mpc) containing 3515 galaxies. The selection criteria are: \(cz > 0\), \(cz < 3200\) km/s, \(|b| > 5^\circ\).
+
+\subsection{Cosmicflows-4 (CF4)}
+The Cosmicflows-4 catalogue (Tully et al. 2023) contains 55,877 galaxies with direct distance measurements. We use a subsample with \(d < 45\) Mpc. The CF4 catalogue is used for blind replication: the angular radius of \(25.5^\circ\) was fixed from the 2MRS data before turning to CF4.
+
+\textit{Note to v2.} In the decomposition analysis (Section 4.4), the CF4 sample is further restricted by the condition \(d > 0\), which gives \(N = 3197\). The number of CF4 subsample galaxies in different subsample filters (3650 in v1; 3197 in the v2 decomposition pipeline) requires verification before final submission --- see the checklist in the repository README.
+
+\section{Method}
+\subsection{Radial profile}
+For each catalogue, the angular distance \(\theta\) from the CMB dipole direction is computed for each galaxy. The galaxies are binned in \(\theta\), and the surface density is computed as
+\begin{equation}
+\rho(\theta) = \frac{N(\theta)}{2\pi \sin\theta \cdot \Delta\theta},
+\end{equation}
+where \(N(\theta)\) is the number of galaxies in the bin and \(\Delta\theta\) is the bin width. The normalized density is defined as
+\begin{equation}
+\tilde{\rho}(\theta) = \frac{\rho(\theta)}{\langle \rho \rangle_{\theta > 10^\circ}}.
+\end{equation}
+
+\subsection{Ratio}
+The quantitative measure of the excess is the ratio
+\begin{equation}
+\text{Ratio} = \frac{\tilde{\rho}(25.5^\circ)}{\langle \tilde{\rho} \rangle_{\text{bg}}},
+\end{equation}
+where the background density \(\langle \tilde{\rho} \rangle_{\text{bg}}\) is averaged over the \(15^\circ\)--\(20^\circ\) and \(30^\circ\)--\(35^\circ\) rings immediately adjacent to the ring on both sides. The errors of the Ratio are the standard deviation of the distribution of values in the mock catalogues (Section 3.3).
+
+\subsection{Mock catalogues}
+To estimate the significance, 10,000 mock catalogues are generated by the following procedure:
+\begin{enumerate}
+\item For each galaxy, its angular distance \(\theta\) from the CMB dipole and its galactic latitude \(b\) are preserved.
+\item A new azimuthal angle \(\phi \in [0^\circ, 360^\circ)\) is randomly generated.
+\item The coordinates (RA, Dec) are recalculated from \((\theta, \phi, b)\).
+\item The Ratio at \(25.5^\circ\) is computed for the mock catalogue.
+\end{enumerate}
+The \(p\)-value is the fraction of mocks with a Ratio larger than the observed one. The procedure preserves the radial density profile and the selection function of the catalogue, but destroys any azimuthal structure, including the ring.
+
+\subsection{Correction for scanning multiple radii}
+The radius of \(25.5^\circ\) was identified from the density profile. Max-statistics is used: for each mock, the maximum of Ratio\((\theta)\) over \(5^\circ\)--\(90^\circ\) is computed, and the \(p\)-value is the fraction of mocks whose maximum exceeds the observed value at \(25.5^\circ\). This quantity (\(p_{\max} = 2.3 \times 10^{-3}\)) is reported alongside the naive one.
+
+\subsection{Decomposition: masking, sector analysis, cross-match, and rotational null}
+\textbf{Masking.} All galaxies in a \(10^\circ\) angular cone around M87 (RA = 187.7\(^\circ\), Dec = 12.7\(^\circ\)) are excluded from the ring and background consistently and without line-of-sight velocity restriction.
+
+\textbf{Sector analysis.} The azimuth \(\phi\) of each galaxy is computed in the plane of the great circle around the dipole direction (vectorially via an orthonormal basis). The ring is divided into 12 sectors of 30\(^\circ\).
+
+\textbf{Cross-match.} For each structure, the fraction of its galaxies in \(10^\circ\) angular cones around known clusters is calculated: Virgo (M87), Hydra (A1060), Antlia, Centaurus, Fornax, Eridanus, M81.
+
+\textbf{Rotational null.} For the azimuthal power spectrum \(P(m)\), a rotation of the entire catalogue by a random angle around the dipole axis is used, with a look-elsewhere correction for 11 harmonics (\(m = 2\)--\(12\)).
+
+\section{Results}
+\subsection{Main result}
+Fig.~1 shows the distribution of 2MRS galaxies on the sky and the radial profile. Both catalogues show a density peak at \(25.5^\circ\).
+
+\begin{table}[H]
+\centering
+\caption{Ratio of the ring density to the background and \(p\)-values.}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Catalogue} & \textbf{N} & \textbf{Ratio (25.5\(^\circ\))} & \textbf{\(p\)-value} \\
+\midrule
+2MRS (\(d < 45\) Mpc) & 3515 & \(1.94 \pm 0.12\) & \(< 10^{-4}\) \\
+CF4 (\(d < 45\) Mpc)  & 3650 & \(2.06 \pm 0.15\) & \(< 10^{-4}\) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+With max-statistics, \(p_{\max} = 2.3 \times 10^{-3}\). The observed ratio exceeds the mean over the mocks (\(1.21 \pm 0.12\)) by about \(6\sigma\).
+
+\subsection{Robustness}
+\begin{table}[H]
+\centering
+\caption{Ratio for different ring widths.}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Ring width} & \textbf{2MRS} & \textbf{CF4} \\
+\midrule
+\(\pm 2^\circ\) & \(1.94\) & \(2.06\) \\
+\(\pm 5^\circ\) & \(2.00\) & \(2.10\) \\
+\(\pm 10^\circ\) & \(1.50\) & \(1.60\) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Ratio for different line-of-sight velocity shells.}
+\begin{tabular}{lcc}
+\toprule
+\textbf{\(cz\) shell} & \textbf{2MRS} & \textbf{CF4} \\
+\midrule
+\(cz < 3000\) km/s & \(2.04\) & \(2.06\) \\
+\(cz < 5000\) km/s & \(1.98\) & \(1.95\) \\
+\(500 < cz < 3500\) km/s & \(1.92\) & \(1.90\) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Replication.} In CF4 at \(d < 100\) Mpc, the ratio is \(1.44\); when depths are equalized to \(d < 45\) Mpc, the values converge to \(1.94\) (2MRS) and \(2.06\) (CF4).
+
+\subsection{Comparison with known structures}
+\begin{table}[H]
+\centering
+\caption{Angular distances from the CMB dipole to the centres of structures.}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Structure} & \textbf{Angular distance} & \textbf{Position relative} \\
+ & \textbf{of the centre from the dipole} & \textbf{to the 25.5\(^\circ\) shell} \\
+\midrule
+Laniakea (centre) & \(8.3^\circ\) & inside the shell \\
+Virgo (M87, cluster) & \(\approx 28^\circ\) & at the outer boundary \\
+Hydra (A1060) & \(\approx 34^\circ\) & arc 30--60\(^\circ\) crosses it \\
+Coma & \(43.9^\circ\) & beyond the outer boundary \\
+Pisces--Perseus & \(120.9^\circ\) & far \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Decomposition of the excess}
+\subsubsection{Masking the Virgo cone}
+\begin{table}[H]
+\centering
+\caption{Masking the \(10^\circ\) Virgo cone.}
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Catalogue} & \textbf{Ratio} & \textbf{Ratio} & \textbf{Signal} & \textbf{Removed} & \textbf{\(p\)} \\
+ & \textbf{no mask} & \textbf{after mask} & \textbf{retained} & \textbf{from ring} & \textbf{(masked mocks)} \\
+\midrule
+2MRS & \(1.86^*\) & \(1.32\) & 71\% & 97 of 244 & 0.059 \\
+CF4  & \(2.22^*\) & \(1.51\) & 68\% & 97 of 219 & \(10^{-3}\) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Sector analysis of the ring}
+The Rayleigh test gives \(R = 0.402\), \(p = 3.9 \times 10^{-18}\). Sector 210--240\(^\circ\) contains 90 of 248 ring galaxies (36\% vs 8.3\% expected, \(\approx +16\sigma\)).
+
+\subsubsection{Arcs and cross-match}
+\begin{table}[H]
+\centering
+\caption{Decomposition of the excess (cut \(cz < 3200\) km/s).}
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Structure} & \textbf{Azimuth} & \textbf{N} & \textbf{Cross-match} & \textbf{Median \(cz\)} & \textbf{Identification} \\
+ & & \textbf{(2MRS/CF4)} & \textbf{(10\(^\circ\) cone)} & \textbf{(2MRS/CF4)} & \\
+\midrule
+Virgo arc & 210--240\(^\circ\) & 86 / 90 & 100\% Virgo & 1233 / 1445 & Virgo cluster periphery \\
+Arc A & 30--60\(^\circ\) & 27 / 19 & 63\% / 74\% Hydra & 2391 / 2647 & Hydra--Antlia wall (near part) \\
+Arc B & 180--210\(^\circ\) & 33 / 25 & 18\% / 20\% Virgo & 1241 / 1602 & Southern Virgo extension \\
+Residual & other & 151 / 122 & 0\% Virgo; 15--17\% Hydra & 1787 / 1843 & Local volume walls background \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+\subsubsection{Depth of arc A: 5000 km/s cut}
+\begin{table}[H]
+\centering
+\caption{Arc A at the \(cz < 5000\) km/s cut.}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Catalogue} & \textbf{N} & \textbf{Median \(cz\)} & \textbf{Percentiles 10--90} & \textbf{Fraction in Hydra cone} \\
+\midrule
+2MRS & 43 (+16) & 2603 km/s & [1076, 4624] & 49\% \\
+CF4  & 24 (+5)  & 2738 km/s & [1326, 4484] & 62\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Discussion}
+\subsection{Projection nature of the excess and comparison with the Big Ring}
+The excess at 25.5\(^\circ\) is not a ring. Its ``ring-like'' appearance is a projection effect: three local volume structures at \(d \approx 15\)--40 Mpc intersect the same angular circle. The v1 estimate (``linear radius \(\approx 20\) Mpc at \(d \approx 43\) Mpc'') is removed by the \(cz\) profiles. The comparison with the Big Ring (Lopez et al. 2024) loses its subject: the observed structure has a known nature and a different scale.
+
+\subsection{Interpretations}
+The main (confirmed) interpretation:
+
+\textbf{(c) Projection of known local volume structures.} The excess is a superposition: the Virgo cluster periphery (arc 210--240\(^\circ\)), the near part of the Hydra--Antlia wall (arc 30--60\(^\circ\)), and the southern extension of the Virgo supercluster (arc 180--210\(^\circ\)).
+
+Interpretations removed by v2 data:
+\begin{itemize}
+\item \textbf{(a) Laniakea basin boundary.} Removed: the residual has no independent azimuthal structure.
+\item \textbf{(b) Unknown wall.} Removed: all three arcs are identified with known structures.
+\item \textbf{(d) Shock fronts.} Removed automatically.
+\end{itemize}
+
+\subsection{Limitations}
+The depths are estimated from median \(cz\); for strict distances, peculiar velocities must be taken into account. The residual smeared background requires a third independent catalogue.
+
+\section{Conclusions}
+\begin{itemize}
+\item An angular excess at \(25.5^\circ\) has been detected: Ratio \(= 1.94 \pm 0.12\) (2MRS) and \(2.06 \pm 0.15\) (CF4), \(p < 10^{-4}\), \(p_{\max} = 2.3 \times 10^{-3}\).
+\item The signal is robust to shell width and velocity shells.
+\item The azimuthal analysis shows the excess is not a ring: it is a dominant arc towards Virgo.
+\item The decomposition identifies the excess with the known local environment: Virgo periphery, Hydra--Antlia wall, southern Virgo extension. All three components are replicated.
+\item Methodological conclusion: robustness and replication do not guarantee novelty; decomposition by azimuth and depth is mandatory.
+\end{itemize}
+
+\section*{Appendix: Figures of Version v2}
+\begin{itemize}
+\item Fig.~2 --- depth of the Virgo arc vs residual: \texttt{final\_test\_2MRS.png}, \texttt{final\_test\_CF4.png};
+\item Fig.~3 --- sky map with arcs and cluster markers: \texttt{sky\_map\_2MRS.png}, \texttt{sky\_map\_CF4.png};
+\item Fig.~4 --- \(cz\) profile of arc A: \texttt{arcA\_2MRS.png}, \texttt{arcA\_CF4.png}.
+\end{itemize}
+
+\section*{Changelog v2 (18.10.2026)}
+The term ``ring excess'' is replaced by ``angular excess''; the title is changed. Section 3.5 and Section 4.4 with Tables 5--7 are added; Table 4 is extended. Sections 5.1--5.2 and conclusions are rewritten. The abstract is rewritten.
+
+\begin{thebibliography}{99}
+\bibitem[Conklin(1969)]{Conklin1969} Conklin E.~K., 1969, Nature, 222, 971
+\bibitem[Haynes \& Giovanelli(1986)]{Haynes1986} Haynes M.~P., Giovanelli R., 1986, ApJ, 306, L55
+\bibitem[Henry(1971)]{Henry1971} Henry P.~S., 1971, Nature, 231, 516
+\bibitem[Huchra et al.(2012)]{Huchra2012} Huchra J.~P., et al., 2012, ApJS, 199, 26
+\bibitem[Lopez et al.(2024)]{Lopez2024} Lopez A.~M., Clowes R., Williger G., 2024, Philosophical Transactions A, 383, 20240029
+\bibitem[Lynden-Bell et al.(1988)]{LyndenBell1988} Lynden-Bell D., et al., 1988, ApJ, 326, 19
+\bibitem[Peebles \& Wilkinson(1968)]{Peebles1968} Peebles P.~J.~E., Wilkinson D.~T., 1968, Phys. Rev., 174, 2168
+\bibitem[Planck Collaboration(2020)]{Planck2020} Planck Collaboration, 2020, A\&A, 641, A1
+\bibitem[Tully et al.(2014)]{Tully2014} Tully R.~B., Courtois H., Hoffman Y., Pomar\`ede D., 2014, Nature, 513, 71
+\bibitem[Tully et al.(2023)]{Tully2023} Tully R.~B., et al., 2023, ApJ, 944, 94
+\bibitem[Yahil et al.(1980)]{Yahil1980} Yahil A., Walker T.~R., Rowan-Robinson M., 1980, ApJ, 238, L1
+\end{thebibliography}
+
+\end{document}

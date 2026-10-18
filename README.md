@@ -1,37 +1,36 @@
-# Ring-like excess of galaxies at 25.5° around the CMB dipole
+# Angular excess of galaxies at 25.5° from the CMB dipole
 
-This repository contains the data and code for the paper:
+This repository contains the data analysis code, the input catalogues, and the manuscript for the paper:
 
-**A Ring-Like Excess of Galaxies at an Angular Radius of 25.5° around the CMB Dipole Direction: Data from 2MRS and Cosmicflows-4**
+**"Angular excess of galaxies at 25.5° from the CMB dipole: a superposition of the Virgo cluster periphery, the Hydra–Antlia wall, and the southern Local Supercluster extension"**
 
-## Contents
+*Author:* Evgeny V. Chernoknizhny (Independent researcher)  
+*ORCID:* [0009-0007-2558-9172](https://orcid.org/0009-0007-2558-9172)  
+*DOI (v2.0):* [10.5281/zenodo.23457373](https://doi.org/10.5281/zenodo.23457373)  
+*Concept DOI (all versions):* [10.5281/zenodo.23441334](https://doi.org/10.5281/zenodo.23441334)
 
-- `paper/main_en.tex` — LaTeX source.
-- `paper/main_en.pdf` — compiled PDF.
-- `figure/ring_figure_v2.png` — Figure 1 (sky map + radial profile).
-- `scripts/` — Python scripts.
-- `data/` — Instructions for downloading 2MRS and CF4.
+## Project Overview
 
-## Scripts
+The paper reports the detection of a statistically significant angular excess of galaxy surface density at an angular radius of 25.5° around the CMB dipole direction (RA = 167.9°, Dec = −7.2°). 
 
-- `ring_final.py` — main test (10,000 mock catalogs).
-- `ring_all_tests.py` — stability tests (bin width, cz shell, depth).
-- `ring_figure_v2.py` — generates Figure 1.
+**Key result (v2.0):** The excess is not a ring in the geometric sense. Azimuthal and depth analysis shows that it is a projection of three known local volume structures:
+1.  **Arc 210–240°** — the Virgo cluster periphery (median depth \(cz \approx 1230-1450\) km/s).
+2.  **Arc 30–60°** — the near part of the Hydra–Antlia wall (median \(cz \approx 2400-2650\) km/s).
+3.  **Arc 180–210°** — the southern extension of the Virgo supercluster (median \(cz \approx 1240-1600\) km/s).
 
-## Requirements
+After masking the Virgo cone, the ratio drops from ~1.9 to ~1.4, but the residual splits into two independent arcs, consistently reproduced in both catalogues (2MRS and CF4).
 
-- Python 3.8+
-- numpy, scipy, astropy, matplotlib
+## Repository Contents
 
-## Citation
+*   `2mrs.csv`, `cf4.csv` — Input catalogues (columns: RA, DEC, CZ).
+*   `convert_to_csv.py` — Script to convert original FITS files to CSV format.
+*   `ring_mask.py` — Code for the main ring ratio analysis, mock catalogues, and Virgo masking test.
+*   `ring_final_test.py` — Code for the final decomposition: sector analysis, arc cross-match, and cz-profiles.
+*   `paper_v2.tex` — LaTeX source of the manuscript (v2.0).
+*   `CMB_dipole_excess_25.5deg_v2.pdf` — Compiled PDF of the manuscript.
 
-Chernoknizhny, E. V. (2026). A Ring-Like Excess of Galaxies at an Angular Radius of 25.5° around the CMB Dipole Direction. Zenodo. DOI: [to be assigned]
-# Ring-like excess of galaxies at 25.5° around the CMB dipole
+## How to Run the Analysis
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23441217.svg)](https://doi.org/10.5281/zenodo.23441217)
-
-This repository contains the data and code for the paper:
-
-**A Ring-Like Excess of Galaxies at an Angular Radius of 25.5° around the CMB Dipole Direction: Data from 2MRS and Cosmicflows-4**
-
-**DOI:** [10.5281/zenodo.23441217](https://doi.org/10.5281/zenodo.23441217)
+1.  **Install dependencies:**
+    ```bash
+    pip install numpy pandas scipy matplotlib astropy

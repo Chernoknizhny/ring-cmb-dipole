@@ -23,7 +23,7 @@ def load_data(filename, zmax=3000):
         ra = ra[mask]
         dec = dec[mask]
         d_mpc = 10**((dm[mask] + 5)/5) / 1e6
-        mask2 = d_mpc < 100
+        mask2 = d_mpc < 45
         return ra[mask2], dec[mask2]
     return ra[mask], dec[mask]
 
@@ -118,7 +118,7 @@ print("4. МОКИ С СЕЛЕКЦИЕЙ")
 print("=" * 60)
 
 # Сохраняем маску: перемешиваем RA только между реальными галактиками
-n_mocks = 1000
+n_mocks = 10000
 ratios_mock = []
 
 for i in range(n_mocks):
